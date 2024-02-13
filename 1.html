@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html atay="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentines Day</title>
+    <style>
+        div {
+            text-align: center;
+            margin-top: 20vh; 
+            position: relative; 
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        #noButton {
+            position: absolute; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src = "ben.jpg">
+        <h1>WILL YOU BE MY VALENTINE?</h1>
+        <button id="yesButton">YES</button>
+        <button id="noButton">NO</button>
+        
+    </div>
+
+    <script>
+        document.getElementById("yesButton").addEventListener("click", function(){
+            alert("YEHEYYY ALI SA PIKAS KWARTO<3");
+            var video = document.createElement("video");
+            video.src = "cat.mp4"; 
+            video.width = 1900; 
+            video.height = 1000; // Adjust as needed
+            video.autoplay = true; // Autoplay the video
+            video.controls = true; // Add controls (play, pause, etc.)
+            video.style.verticalAlign = "middle"; 
+            document.body.appendChild(video); 
+            setTimeout(function() {
+                video.remove(); 
+            }, 6000); // Remove the video after 10 seconds
+        });
+
+        var noButton = document.getElementById("noButton");
+        noButton.addEventListener("click", function(){
+            var maxX = window.innerWidth - noButton.offsetWidth;
+            var maxY = window.innerHeight - noButton.offsetHeight;
+            var newX = Math.floor(Math.random() * maxX);
+            var newY = Math.floor(Math.random() * maxY);
+            noButton.style.left = newX + "px";
+            noButton.style.top = newY + "px";
+
+            var img = document.createElement("img");
+            img.src = "2.jpg"; 
+            img.width = 1900; 
+            img.height = 900; 
+            img.style.verticalAlign = "center"; 
+            document.body.appendChild(img); 
+            setTimeout(function() {
+                img.remove(); 
+            }, 2000);
+            
+        });
+    </script>
+</body>
+</html>
